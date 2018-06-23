@@ -61,4 +61,20 @@ def isSquare(n):
 	rt = isqrt(n)
 	return(rt**2 == n)
 	
-
+def numDivisors(n):
+	lim = floor(sqrt(float(n)))
+	ind = 2
+	expProd = 1 
+	while ind <= lim:
+		expCount = 1
+		while n % ind == 0:
+			expCount += 1	
+			n //= ind
+		expProd *= expCount
+		ind += 1
+		if expCount > 1:
+			lim = floor(sqrt(float(n)))
+	if n == 1:
+		return(expProd)
+	else:
+		return(2 * expProd)
