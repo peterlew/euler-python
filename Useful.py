@@ -78,3 +78,41 @@ def numDivisors(n):
 		return(expProd)
 	else:
 		return(2 * expProd)
+
+def divisors(n):
+	lim = floor(sqrt(float(n)))
+	ind = 2
+	divs = [1]
+	while ind <= lim:
+		if n % ind == 0:
+			if ind * ind == n:
+				divs += [ind]
+			else:
+				divs += [ind, n // ind]
+		ind += 1
+	divs.sort()
+	return divs
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
