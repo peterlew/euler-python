@@ -92,6 +92,15 @@ def divisors(n):
 		ind += 1
 	divs.sort()
 	return divs
+
+def isPrime(n):
+	if n < 2:
+		return False
+	lim = floor(sqrt(float(n)))
+	for i in range(2, lim + 1):
+		if n % i == 0:
+			return False
+	return True
 		
 
 
